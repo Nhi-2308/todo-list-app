@@ -63,3 +63,28 @@ if __name__ == "__main__":
     list_tasks()
     complete_task(0)
     list_tasks()
+    tasks = [
+    {"name": "Học bài Git", "completed": False},
+    {"name": "Làm bài tập Python", "completed": False}
+]
+
+def add_task(task_name):
+    task = {"name": task_name, "completed": False}
+    tasks.append(task)
+    print(f"Đã thêm công việc: {task_name}")
+def delete_task(task_index):
+    if 0 <= task_index < len(tasks):
+        deleted_task = tasks.pop(task_index)
+        print(f" Đã xóa công việc: {deleted_task['name']}")
+        return True
+    else:
+        print("X Lỗi: Chỉ số không hợp lệ!")
+        return False
+if __name__ == "__main__":
+    add_task("Học Python")
+    add_task("Làm bài tập Git")
+    list_tasks()
+    complete_task(0) 
+    list_tasks()
+    delete_task(0)  
+    list_tasks()
